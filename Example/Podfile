@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Stringee_Example' do
+  pod 'Stringee', :path => '../'
+
+  target 'Stringee_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

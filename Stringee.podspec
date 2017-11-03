@@ -1,18 +1,18 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Stringee'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'Developed by Stringee'
 
   s.description      = <<-DESC
 The Stringee platform, developed by Stringee, makes it easy to embed high-quality interactive video, voice, messaging, and screen sharing into web and mobile apps.
                        DESC
 
-  s.homepage         = 'https://github.com/stringeecom/Stringee'
+  s.homepage         = 'https://github.com/stringeecom/Stringee-iOS-SDK'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'HoangDuoc' => 'duochv@stringee.com' }
-  s.source           = { :git => 'https://github.com/stringeecom/Stringee.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/stringeecom/Stringee-iOS-SDK.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'

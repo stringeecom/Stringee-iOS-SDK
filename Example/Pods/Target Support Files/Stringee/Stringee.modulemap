@@ -1,0 +1,6 @@
+framework module Stringee {
+  umbrella header "Stringee-umbrella.h"
+
+  export *
+  module * { export * }
+}

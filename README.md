@@ -5,12 +5,6 @@
 [![License](https://img.shields.io/cocoapods/l/Stringee.svg?style=flat)](http://cocoapods.org/pods/Stringee)
 [![Platform](https://img.shields.io/cocoapods/p/Stringee.svg?style=flat)](http://cocoapods.org/pods/Stringee)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
-
 ## Installation
 
 Stringee is available through [CocoaPods](http://cocoapods.org). To install
@@ -22,7 +16,7 @@ pod 'Stringee'
 
 ## Author
 
-duochv@stringee.com, hoangduoc20121540@gmail.com
+duochv@stringee.com
 
 ## License
 

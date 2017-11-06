@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface StringeeAudioManager : NSObject
+
 
 + (StringeeAudioManager *)instance;
 
@@ -20,5 +20,6 @@
 - (BOOL)audioSessionSetActive:(BOOL)active error:(NSError **)outError;
 
 - (BOOL)audioSessionSetMode:(NSString *)mode error:(NSError **)outError;
+
 
 @end

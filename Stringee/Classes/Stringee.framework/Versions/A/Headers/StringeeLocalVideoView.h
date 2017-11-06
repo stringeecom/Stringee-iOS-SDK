@@ -8,12 +8,10 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import <Foundation/Foundation.h>
-#import "StringeeCameraPreviewView.h"
 #import <UIKit/UIKit.h>
-#import "StringeeVideoRenderer.h"
 
-@interface StringeeLocalVideoView: StringeeCameraPreviewView<StringeeVideoRenderer>
+@interface StringeeLocalVideoView: UIView
 
-@property(nonatomic, strong) AVCaptureSession * captureSession;
+@property (nonatomic, strong, readonly) AVCaptureSession *captureSession;
 
 @end

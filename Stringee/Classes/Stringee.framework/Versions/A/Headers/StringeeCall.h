@@ -7,20 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "StringeePrivateCall.h"
-#import "StringeeConstants.h"
-#import "StringeePacketSender.h"
-
 #import <CoreTelephony/CTCall.h>
 #import <CoreTelephony/CTCallCenter.h>
 #import "StringeeClient.h"
-
 #import "StringeeLocalVideoView.h"
 #import "StringeeRemoteVideoView.h"
 
 @class StringeeCall;
-@class StringeeClient;
-
 
 typedef enum {
     STRINGEE_CALLSTATE_INIT           = 0,
@@ -54,115 +47,72 @@ typedef enum {
 } CallDTMF;
 
 typedef enum {
-    VideoResolution_Normal      = 0,
-    VideoResolution_HD          = 1
+    VideoResolution_Normal      = 0, // 480 x 640
+    VideoResolution_HD          = 1  // 720 x 1280
 } VideoResolution;
+
 
 @protocol StringeeCallStateDelegate <NSObject>
 
 @required
 
--(void) didChangeState:(StringeeCall *) stringeeCall stringeeCallState:(StringeeCallState) state reason:(NSString *) reason;
+- (void)didChangeState:(StringeeCall *)stringeeCall stringeeCallState:(StringeeCallState)state reason:(NSString *)reason;
 
 @end
-
 
 
 @protocol StringeeCallMediaDelegate <NSObject>
 
 @required
 
--(void) didReceiveDtmfDigit:(StringeeCall *) stringeeCall digit:(NSString *) digit;
+- (void)didReceiveDtmfDigit:(StringeeCall *)stringeeCall digit:(NSString *)digit;
 
--(void) didReceiveLocalStream:(StringeeCall *) stringeeCall;
+- (void)didReceiveLocalStream:(StringeeCall *)stringeeCall;
 
--(void) didReceiveRemoteStream:(StringeeCall *) stringeeCall;
+- (void)didReceiveRemoteStream:(StringeeCall *)stringeeCall;
 
 @end
 
 
-@interface StringeeCall : NSObject<StringeePrivateCallDelegate>
+@interface StringeeCall : NSObject
 
-@property(assign, nonatomic) int stringeeCallId;
-@property(strong, nonatomic) NSString * callId;
-@property(strong, nonatomic) NSString * from;
-@property(strong, nonatomic) NSString * to;
-@property(strong, nonatomic) NSString * fromAlias;
-@property(strong, nonatomic) NSString * toAlias;
-@property(strong, nonatomic) NSDictionary * customData;
-@property(assign, nonatomic) BOOL isIncomingCall;
+@property (strong, nonatomic, readonly) NSString *callId;
+@property (strong, nonatomic, readonly) NSString *from;
+@property (strong, nonatomic, readonly) NSString *to;
+@property (strong, nonatomic, readonly) NSString *fromAlias;
+@property (strong, nonatomic, readonly) NSString *toAlias;
+@property (weak, nonatomic) id<StringeeCallStateDelegate> callStateDelegate;
+@property (weak, nonatomic) id<StringeeCallMediaDelegate> callMediaDelegate;
+@property (assign, nonatomic, readonly) CallType callType;
+@property (assign, nonatomic) BOOL isVideoCall;
+@property (assign, nonatomic) VideoResolution videoResolution;
+@property (strong, nonatomic, readonly) StringeeLocalVideoView *localVideoView;
+@property (strong, nonatomic, readonly) StringeeRemoteVideoView *remoteVideoView;
 
-@property(weak, nonatomic) id<StringeeCallStateDelegate> callStateDelegate;
-@property(weak, nonatomic) id<StringeeCallMediaDelegate> callMediaDelegate;
-@property(weak, nonatomic) StringeeClient * stringeeClient;
-
-
-@property(strong, nonatomic) StringeePrivateCall * call;
-@property(assign, nonatomic) BOOL isCaller;
-@property(assign, nonatomic) CallType callType;
-@property(assign, nonatomic) BOOL isVideoCall;
-@property(assign, nonatomic) VideoResolution videoResolution;
-@property(assign, nonatomic) BOOL hasAddedCandidate;
-@property(assign, nonatomic) BOOL hasSetSDP;
-@property(strong, nonatomic) NSMutableArray *  arrayLocalCandidates;
-
-@property(assign, nonatomic) BOOL isAcceptedCall;
-@property(assign, nonatomic) BOOL isPeerConnected;
-
-// Remote info
-//@property(assign, nonatomic) BOOL * didSetRemoteSDP;
-
-@property (nonatomic, strong) completion makeCallHandler;
-@property (nonatomic, strong) NSMutableDictionary * dicDTMFHander;
-
-
-// Video
-@property(strong, nonatomic) StringeeLocalVideoView * localVideoView;
-@property(strong, nonatomic) StringeeRemoteVideoView * remoteVideoView;
-
-@property(strong, nonatomic) AVCaptureSession * localCaptionSesstion;
-@property(strong, nonatomic) StringeeVideoTrack * remoteVideoTrack;
 
 // MARK: - Init
 
--(instancetype) initWithStringeeClient:(StringeeClient *) stringeeClient isIncomingCall:(BOOL) isIncomingCall from:(NSString *) from to:(NSString *) to;
+- (instancetype)initWithStringeeClient:(StringeeClient *)stringeeClient isIncomingCall:(BOOL)isIncomingCall from:(NSString *)from to:(NSString *)to;
 
--(instancetype) initWithStringeeClient:(StringeeClient *) stringeeClient isIncomingCall:(BOOL) isIncomingCall from:(NSString *) from to:(NSString *) to callId:(NSString *) callId;
-
-
+- (instancetype)initWithStringeeClient:(StringeeClient *)stringeeClient isIncomingCall:(BOOL)isIncomingCall from:(NSString *)from to:(NSString *)to callId:(NSString *)callId;
 
 // MARK: - Public
 
--(void) makeCallWithCompletionHandler:(completion) completionHandler;
+- (void)makeCallWithCompletionHandler:(void(^)(BOOL status, int code, NSString * message))completionHandler;
 
--(void) initAnswerCall;
+- (void)initAnswerCall;
 
--(void) answerCall;
+- (void)answerCall;
 
--(void) hangup;
+- (void)hangup;
 
--(void) callDTMF:(CallDTMF) callDTMF completionHandler:(completion) completionHandler;
+- (void)callDTMF:(CallDTMF)callDTMF completionHandler:(void(^)(BOOL status, int code, NSString * message))completionHandler;
 
-// Video Call
--(void) switchCamera;
+- (void)switchCamera;
 
--(void) turnOnCamera:(BOOL) isOn;
+- (void)turnOnCamera:(BOOL)isOn;
 
--(void) autoOrientationOfLocalVideoViewWithSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator;
-
-// MARK: - Process
-
--(void) startCallWith:(NSMutableArray<StringeeIceServer*>*) iceServers andCallId: (NSString *) callId isCaller:(BOOL) isCaller;
-
--(void) setSDPReceiveFromGateWay:(StringeeSDP *) sdp andCallId:(NSString *) callId;
-
--(void) addCandidate:(StringeeIceCandidate *) candidate;
-
--(void) addCandidatesFollowOrderWithArray:(NSMutableArray *) arrayCandidates;
-
--(void) processHangup;
-
-// Option
+- (void)autoOrientationOfLocalVideoViewWithSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator;
 
 - (void)mute:(BOOL)isMute;
 

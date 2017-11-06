@@ -7,19 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "StringeeVideoView.h"
 
 @class StringeeRemoteVideoView;
 
-@protocol StringeeRemoteViewDelegate<StringeeVideoViewDelegate>
+@protocol StringeeRemoteViewDelegate
 
 - (void)videoView:(StringeeRemoteVideoView *)videoView didChangeVideoSize:(CGSize)size;
 
 @end
 
 
-@interface StringeeRemoteVideoView : StringeeVideoView
+@interface StringeeRemoteVideoView : UIView
 
-@property(nonatomic, weak) id<StringeeRemoteViewDelegate> delegate;
+@property (nonatomic, weak) id<StringeeRemoteViewDelegate> delegate;
 
 @end

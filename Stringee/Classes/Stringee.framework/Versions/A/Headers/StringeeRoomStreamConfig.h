@@ -17,7 +17,8 @@ typedef enum {
 
 @interface StringeeRoomStreamConfig : NSObject
 
-@property (assign, nonatomic) StreamVideoResolution streamVideoResolution;
+@property(assign, nonatomic) StreamVideoResolution streamVideoResolution;
+
 
 - (instancetype)init;
 

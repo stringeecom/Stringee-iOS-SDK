@@ -10,14 +10,14 @@
 
 
 typedef enum {
-    StreamVideoResolution_Normal      = 0, // 480 x 640
-    StreamVideoResolution_HD          = 1  // 720 x 1280
-} StreamVideoResolution;
+    VideoResolution_Normal      = 0, // 480 x 640
+    VideoResolution_HD          = 1  // 720 x 1280
+} VideoResolution;
 
 
 @interface StringeeRoomStreamConfig : NSObject
 
-@property (assign, nonatomic) StreamVideoResolution streamVideoResolution;
+@property(assign, nonatomic) VideoResolution streamVideoResolution;
 
 - (instancetype)init;
 

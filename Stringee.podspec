@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Stringee'
-  s.version          = '1.0.5'
+  s.version          = '1.0.6'
   s.summary          = 'Developed by Stringee'
 
   s.description      = <<-DESC
@@ -25,4 +25,5 @@ The Stringee platform, developed by Stringee, makes it easy to embed high-qualit
   s.libraries = 'icucore', 'stdc++'
 
   s.vendored_frameworks = 'Stringee/Classes/**/Stringee.framework'
+
 end

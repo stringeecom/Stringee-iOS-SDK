@@ -12,6 +12,7 @@
 #import "StringeeClient.h"
 #import "StringeeLocalVideoView.h"
 #import "StringeeRemoteVideoView.h"
+#import "StringeeRoomStreamConfig.h"
 
 @class StringeeCall;
 
@@ -46,11 +47,6 @@ typedef enum {
     CallDTMF_Pound          = 11
 } CallDTMF;
 
-typedef enum {
-    VideoResolution_Normal      = 0, // 480 x 640
-    VideoResolution_HD          = 1  // 720 x 1280
-} VideoResolution;
-
 
 @protocol StringeeCallStateDelegate <NSObject>
 
@@ -79,8 +75,6 @@ typedef enum {
 @property (strong, nonatomic, readonly) NSString *callId;
 @property (strong, nonatomic, readonly) NSString *from;
 @property (strong, nonatomic, readonly) NSString *to;
-@property (strong, nonatomic, readonly) NSString *fromAlias;
-@property (strong, nonatomic, readonly) NSString *toAlias;
 @property (weak, nonatomic) id<StringeeCallStateDelegate> callStateDelegate;
 @property (weak, nonatomic) id<StringeeCallMediaDelegate> callMediaDelegate;
 @property (assign, nonatomic, readonly) CallType callType;

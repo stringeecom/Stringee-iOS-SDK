@@ -49,4 +49,6 @@
 
 - (void)connectWithAccessToken:(NSString *)accessToken;
 
+- (void)disconnect;
+
 @end

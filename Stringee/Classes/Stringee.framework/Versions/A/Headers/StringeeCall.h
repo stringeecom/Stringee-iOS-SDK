@@ -102,7 +102,7 @@ typedef enum {
 
 - (void)reject;
 
-- (void)callDTMF:(CallDTMF)callDTMF completionHandler:(void(^)(BOOL status, int code, NSString * message))completionHandler;
+- (void)sendDTMF:(CallDTMF)callDTMF completionHandler:(void(^)(BOOL status, int code, NSString * message))completionHandler;
 
 - (void)switchCamera;
 

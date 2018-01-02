@@ -31,7 +31,7 @@
 
 @required
 
-- (void)incomingCallWithStringeeClient:(StringeeClient *)stringeeClient isVideoCall:(BOOL)isVideoCall callId:(NSString *)callId from:(NSString *)from to:(NSString *)to fromAlias:(NSString *)fromAlias toAlias:(NSString *)toAlias;
+-(void) incomingCallWithStringeeClient:(StringeeClient *)stringeeClient stringeeCall:(StringeeCall *)stringeeCall;
 
 @end
 

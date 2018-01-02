@@ -88,9 +88,7 @@ typedef enum {
 
 // MARK: - Init
 
-- (instancetype)initWithStringeeClient:(StringeeClient *)stringeeClient isIncomingCall:(BOOL)isIncomingCall from:(NSString *)from to:(NSString *)to;
-
-- (instancetype)initWithStringeeClient:(StringeeClient *)stringeeClient isIncomingCall:(BOOL)isIncomingCall from:(NSString *)from to:(NSString *)to callId:(NSString *)callId;
+-(instancetype) initWithStringeeClient:(StringeeClient *) stringeeClient from:(NSString *) from to:(NSString *) to;
 
 // MARK: - Public
 

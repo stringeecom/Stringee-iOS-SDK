@@ -75,6 +75,8 @@ typedef enum {
 @property (strong, nonatomic, readonly) NSString *callId;
 @property (strong, nonatomic, readonly) NSString *from;
 @property (strong, nonatomic, readonly) NSString *to;
+@property (strong, nonatomic, readonly) NSString *fromAlias;
+@property (strong, nonatomic, readonly) NSString *toAlias;
 @property (weak, nonatomic) id<StringeeCallStateDelegate> callStateDelegate;
 @property (weak, nonatomic) id<StringeeCallMediaDelegate> callMediaDelegate;
 @property (assign, nonatomic, readonly) CallType callType;

@@ -22,7 +22,8 @@ typedef enum {
     STRINGEE_CALLSTATE_RINGING        = 2,
     STRINGEE_CALLSTATE_STARTING       = 3,
     STRINGEE_CALLSTATE_CONNECTED      = 4,
-    STRINGEE_CALLSTATE_END            = 5
+    STRINGEE_CALLSTATE_BUSY           = 5,
+    STRINGEE_CALLSTATE_END            = 6
 } StringeeCallState;
 
 typedef enum {

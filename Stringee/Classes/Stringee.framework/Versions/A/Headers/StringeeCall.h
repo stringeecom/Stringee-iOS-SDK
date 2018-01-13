@@ -107,7 +107,7 @@ typedef enum {
 
 - (void)switchCamera;
 
-- (void)turnOnCamera:(BOOL)isOn;
+- (BOOL)enableLocalVideo:(BOOL)isEnable;
 
 - (void)autoOrientationOfLocalVideoViewWithSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator;
 

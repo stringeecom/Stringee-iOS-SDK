@@ -107,6 +107,8 @@ typedef enum {
 
 - (void)sendDTMF:(CallDTMF)callDTMF completionHandler:(void(^)(BOOL status, int code, NSString * message))completionHandler;
 
+- (void)sendCallInfo:(NSDictionary *)info;
+
 - (void)switchCamera;
 
 - (BOOL)enableLocalVideo:(BOOL)isEnable;

@@ -66,6 +66,8 @@ typedef enum {
 
 - (void)didReceiveCallInfo:(StringeeCall *)stringeeCall info:(NSDictionary *)info;
 
+- (void)didAnsweredOnOtherDevice:(StringeeCall *)stringeeCall state:(StringeeCallState)state;
+
 - (void)didReceiveLocalStream:(StringeeCall *)stringeeCall;
 
 - (void)didReceiveRemoteStream:(StringeeCall *)stringeeCall;

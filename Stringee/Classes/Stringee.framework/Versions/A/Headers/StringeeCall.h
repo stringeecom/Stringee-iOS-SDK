@@ -82,6 +82,8 @@ typedef enum {
 @property (strong, nonatomic, readonly) NSString *toAlias;
 @property (weak, nonatomic) id<StringeeCallStateDelegate> callStateDelegate;
 @property (weak, nonatomic) id<StringeeCallMediaDelegate> callMediaDelegate;
+@property (assign, nonatomic, readonly) BOOL isIncomingCall;
+@property (assign, nonatomic, readonly) BOOL answeredOnAnotherDevice;
 @property (assign, nonatomic, readonly) CallType callType;
 @property (assign, nonatomic) BOOL isVideoCall;
 @property (assign, nonatomic) VideoResolution videoResolution;
@@ -91,19 +93,19 @@ typedef enum {
 
 // MARK: - Init
 
--(instancetype) initWithStringeeClient:(StringeeClient *) stringeeClient from:(NSString *) from to:(NSString *) to;
+- (instancetype)initWithStringeeClient:(StringeeClient *) stringeeClient from:(NSString *) from to:(NSString *) to;
 
 // MARK: - Public
 
-- (void)makeCallWithCompletionHandler:(void(^)(BOOL status, int code, NSString * message))completionHandler;
+- (void)makeCallWithCompletionHandler:(void(^)(BOOL status, int code, NSString * message)) completionHandler;
 
 - (void)initAnswerCall;
 
-- (void)answerCall;
+- (void)answerCallWithCompletionHandler:(void(^)(BOOL status, int code, NSString * message)) completionHandler;
 
-- (void)hangup;
+- (void)hangupWithCompletionHandler:(void(^)(BOOL status, int code, NSString * message)) completionHandler;
 
-- (void)reject;
+- (void)rejectWithCompletionHandler:(void(^)(BOOL status, int code, NSString * message)) completionHandler;
 
 - (void)sendDTMF:(CallDTMF)callDTMF completionHandler:(void(^)(BOOL status, int code, NSString * message))completionHandler;
 

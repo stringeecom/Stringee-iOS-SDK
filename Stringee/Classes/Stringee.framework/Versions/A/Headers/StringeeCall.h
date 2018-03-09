@@ -17,13 +17,14 @@
 @class StringeeCall;
 
 typedef enum {
-    STRINGEE_CALLSTATE_INIT           = 0,
-    STRINGEE_CALLSTATE_CALLING        = 1,
-    STRINGEE_CALLSTATE_RINGING        = 2,
-    STRINGEE_CALLSTATE_STARTING       = 3,
-    STRINGEE_CALLSTATE_CONNECTED      = 4,
-    STRINGEE_CALLSTATE_BUSY           = 5,
-    STRINGEE_CALLSTATE_END            = 6
+    STRINGEE_CALLSTATE_INIT                     = 0,
+    STRINGEE_CALLSTATE_CALLING                  = 1,
+    STRINGEE_CALLSTATE_RINGING                  = 2,
+    STRINGEE_CALLSTATE_RINGING_WITH_RINGTONE    = 3,
+    STRINGEE_CALLSTATE_STARTING                 = 4,
+    STRINGEE_CALLSTATE_CONNECTED                = 5,
+    STRINGEE_CALLSTATE_BUSY                     = 6,
+    STRINGEE_CALLSTATE_END                      = 7
 } StringeeCallState;
 
 typedef enum {
@@ -87,6 +88,7 @@ typedef enum {
 @property (assign, nonatomic, readonly) BOOL isIncomingCall;
 @property (assign, nonatomic, readonly) BOOL answeredOnAnotherDevice;
 @property (assign, nonatomic, readonly) CallType callType;
+@property (strong, nonatomic) NSString *customData;
 @property (assign, nonatomic) BOOL isVideoCall;
 @property (assign, nonatomic) VideoResolution videoResolution;
 @property (strong, nonatomic, readonly) StringeeLocalVideoView *localVideoView;

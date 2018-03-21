@@ -16,62 +16,61 @@
 
 @class StringeeCall;
 
-typedef enum {
-    STRINGEE_CALLSTATE_INIT                     = 0,
-    STRINGEE_CALLSTATE_CALLING                  = 1,
-    STRINGEE_CALLSTATE_RINGING                  = 2,
-    STRINGEE_CALLSTATE_RINGING_WITH_RINGTONE    = 3,
-    STRINGEE_CALLSTATE_STARTING                 = 4,
-    STRINGEE_CALLSTATE_CONNECTED                = 5,
-    STRINGEE_CALLSTATE_BUSY                     = 6,
-    STRINGEE_CALLSTATE_END                      = 7
-} StringeeCallState;
+typedef NS_ENUM(NSInteger, SignalingState) {
+    SignalingStateCalling,
+    SignalingStateRinging,
+    SignalingStateAnswered,
+    SignalingStateBusy,
+    SignalingStateEnded
+};
 
-typedef enum {
-    CallType_CallIn                     = 0,
-    CallType_CallOut                    = 1,
-    CallType_Internal_Incoming_Call     = 2,
-    CallType_Internal_Call_Away         = 3
-} CallType;
+typedef NS_ENUM(NSInteger, MediaState) {
+    MediaStateConnected,
+    MediaStateDisconnected
+};
 
-typedef enum {
-    CallDTMF_Zero           = 0,
-    CallDTMF_One            = 1,
-    CallDTMF_Two            = 2,
-    CallDTMF_Three          = 3,
-    CallDTMF_Four           = 4,
-    CallDTMF_Five           = 5,
-    CallDTMF_Six            = 6,
-    CallDTMF_Seven          = 7,
-    CallDTMF_Eight          = 8,
-    CallDTMF_Nine           = 9,
-    CallDTMF_Star           = 10,
-    CallDTMF_Pound          = 11
-} CallDTMF;
+typedef NS_ENUM(NSInteger, CallType) {
+    CallTypeCallIn,
+    CallTypeCallOut,
+    CallTypeInternalIncomingCall,
+    CallTypeInternalCallAway
+};
 
-
-@protocol StringeeCallStateDelegate <NSObject>
-
-@required
-
-- (void)didChangeState:(StringeeCall *)stringeeCall stringeeCallState:(StringeeCallState)state reason:(NSString *)reason;
-
-@end
+typedef NS_ENUM(NSInteger, CallDTMF) {
+    CallDTMFZero,
+    CallDTMFOne,
+    CallDTMFTwo,
+    CallDTMFThree,
+    CallDTMFFour,
+    CallDTMFFive,
+    CallDTMFSix,
+    CallDTMFSeven,
+    CallDTMFEight,
+    CallDTMFNine,
+    CallDTMFStar,
+    CallDTMFPound
+};
 
 
-@protocol StringeeCallMediaDelegate <NSObject>
+@protocol StringeeCallDelegate <NSObject>
 
 @required
 
-- (void)didReceiveDtmfDigit:(StringeeCall *)stringeeCall digit:(NSString *)digit;
+- (void)didChangeSignalingState:(StringeeCall *)stringeeCall signalingState:(SignalingState)signalingState reason:(NSString *)reason sipCode:(int)sipCode sipReason:(NSString *)sipReason;
 
-- (void)didReceiveCallInfo:(StringeeCall *)stringeeCall info:(NSDictionary *)info;
+- (void)didChangeMediaState:(StringeeCall *)stringeeCall mediaState:(MediaState)mediaState;
 
-- (void)didAnsweredOnOtherDevice:(StringeeCall *)stringeeCall state:(StringeeCallState)state;
+@optional
 
 - (void)didReceiveLocalStream:(StringeeCall *)stringeeCall;
 
 - (void)didReceiveRemoteStream:(StringeeCall *)stringeeCall;
+
+- (void)didReceiveDtmfDigit:(StringeeCall *)stringeeCall callDTMF:(CallDTMF)callDTMF;
+
+- (void)didReceiveCallInfo:(StringeeCall *)stringeeCall info:(NSDictionary *)info;
+
+- (void)didHandleOnAnotherDevice:(StringeeCall *)stringeeCall signalingState:(SignalingState)signalingState reason:(NSString *)reason sipCode:(int)sipCode sipReason:(NSString *)sipReason;
 
 @end
 
@@ -83,8 +82,7 @@ typedef enum {
 @property (strong, nonatomic, readonly) NSString *to;
 @property (strong, nonatomic, readonly) NSString *fromAlias;
 @property (strong, nonatomic, readonly) NSString *toAlias;
-@property (weak, nonatomic) id<StringeeCallStateDelegate> callStateDelegate;
-@property (weak, nonatomic) id<StringeeCallMediaDelegate> callMediaDelegate;
+@property (weak, nonatomic) id<StringeeCallDelegate> delegate;
 @property (assign, nonatomic, readonly) BOOL isIncomingCall;
 @property (assign, nonatomic, readonly) BOOL answeredOnAnotherDevice;
 @property (assign, nonatomic, readonly) CallType callType;
@@ -113,7 +111,7 @@ typedef enum {
 
 - (void)sendDTMF:(CallDTMF)callDTMF completionHandler:(void(^)(BOOL status, int code, NSString * message))completionHandler;
 
-- (void)sendCallInfo:(NSDictionary *)info;
+- (void)sendCallInfo:(NSDictionary *)info completionHandler:(void(^)(BOOL status, int code, NSString * message))completionHandler;
 
 - (void)switchCamera;
 

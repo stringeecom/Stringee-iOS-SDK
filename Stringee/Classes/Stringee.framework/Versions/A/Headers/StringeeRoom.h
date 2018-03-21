@@ -48,7 +48,7 @@
 @interface StringeeRoom : NSObject
 
 @property (weak, nonatomic, readonly) StringeeClient *stringeeClient;
-@property (weak, nonatomic) id<StringeeRoomDelegate> roomDelegate;
+@property (weak, nonatomic) id<StringeeRoomDelegate> delegate;
 @property (assign, nonatomic, readonly) long long roomId;
 
 // MARK: - Init

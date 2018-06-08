@@ -87,7 +87,7 @@ typedef NS_ENUM(NSInteger, CallDTMF) {
 @property (assign, nonatomic, readonly) BOOL answeredOnAnotherDevice;
 @property (assign, nonatomic, readonly) CallType callType;
 @property (strong, nonatomic) NSString *customData;
-@property (strong, nonatomic) NSString *customDataFromYourServer;
+@property (strong, nonatomic, readonly) NSString *customDataFromYourServer;
 @property (assign, nonatomic) BOOL isVideoCall;
 @property (assign, nonatomic) VideoResolution videoResolution;
 @property (strong, nonatomic, readonly) StringeeLocalVideoView *localVideoView;

@@ -24,6 +24,8 @@
 
 - (void)didFailWithError:(StringeeClient *)stringeeClient code:(int)code message:(NSString *)message;
 
+- (void)didReceiveCustomMessage:(StringeeClient *)stringeeClient message:(NSDictionary *)message fromUserId:(NSString *)userId;
+
 @end
 
 

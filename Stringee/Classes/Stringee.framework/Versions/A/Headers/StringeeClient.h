@@ -24,7 +24,11 @@
 
 - (void)didFailWithError:(StringeeClient *)stringeeClient code:(int)code message:(NSString *)message;
 
+@optional
+
 - (void)didReceiveCustomMessage:(StringeeClient *)stringeeClient message:(NSDictionary *)message fromUserId:(NSString *)userId;
+
+- (void)didReceiveMessageFromTopic:(StringeeClient *)stringeeClient message:(NSDictionary *)message fromUserId:(NSString *)userId;
 
 @end
 
@@ -58,5 +62,7 @@
 - (void)unregisterPushForDeviceToken:(NSString *)deviceToken completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
 
 - (void)sendCustomMessage:(NSDictionary *)message toUserId:(NSString *)userId completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
+
+- (void)changeAttribute:(NSString *)attributeName value:(NSString *)value completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
 
 @end

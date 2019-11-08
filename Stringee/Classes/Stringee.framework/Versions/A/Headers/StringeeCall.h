@@ -124,6 +124,8 @@ typedef NS_ENUM(NSInteger, CallDTMF) {
 
 - (void)transferToUserId:(NSString *)userId completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
 
+- (void)externalTransfer:(NSString *)from to:(NSString *)to completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
+
 - (void)hold:(BOOL)isHold completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
 
 - (void)statsWithCompletionHandler:

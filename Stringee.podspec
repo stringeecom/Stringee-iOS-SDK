@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Stringee'
-  s.version          = '1.4.2'
+  s.version          = '1.4.3'
   s.summary          = 'Developed by Stringee'
 
   s.description      = <<-DESC
@@ -15,7 +15,7 @@ The Stringee platform, developed by Stringee, makes it easy to embed high-qualit
   s.source           = { :git => 'https://github.com/stringeecom/Stringee-iOS-SDK.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.pod_target_xcconfig = {'OTHER_LDFLAGS' => '-ObjC'}
 
   s.source_files = 'Stringee/Classes/**/Stringee.framework/Versions/A/Headers/*.h'
@@ -25,5 +25,6 @@ The Stringee platform, developed by Stringee, makes it easy to embed high-qualit
   s.libraries = 'icucore', 'stdc++'
 
   s.vendored_frameworks = 'Stringee/Classes/**/Stringee.framework'
+  s.dependency "GoogleWebRTC", '1.1.27828'
 
 end

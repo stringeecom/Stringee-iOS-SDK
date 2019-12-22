@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong, readonly) AVCaptureSession *captureSession;
 
+@property(copy) AVLayerVideoGravity videoGravity;
+
 @end

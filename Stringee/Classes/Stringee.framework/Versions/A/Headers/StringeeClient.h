@@ -53,6 +53,8 @@
 
 - (instancetype)initWithConnectionDelegate:(id<StringeeConnectionDelegate>)delegate;
 
+- (void)setHost:(NSString *)host port:(int)port;
+
 - (void)connectWithAccessToken:(NSString *)accessToken;
 
 - (void)disconnect;

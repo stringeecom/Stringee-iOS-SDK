@@ -7,6 +7,7 @@
 //
 
 #import "StringeeClient.h"
+#import "StringeeServerAddress.h"
 #import "StringeeCall.h"
 #import "StringeeAudioManager.h"
 #import "StringeeLocalVideoView.h"

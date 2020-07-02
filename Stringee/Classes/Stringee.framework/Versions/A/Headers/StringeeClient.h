@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StringeeServerAddress.h"
 
 @class StringeeClient;
 @class StringeeCall;
@@ -53,7 +54,9 @@
 
 - (instancetype)initWithConnectionDelegate:(id<StringeeConnectionDelegate>)delegate;
 
-- (void)setHost:(NSString *)host port:(int)port;
+- (instancetype)initWithConnectionDelegate:(id<StringeeConnectionDelegate>)delegate serverAddress:(NSArray<StringeeServerAddress *> *)serverAddresses;
+
+- (instancetype)initWithServerAddress:(NSArray<StringeeServerAddress *> *)serverAddresses;
 
 - (void)connectWithAccessToken:(NSString *)accessToken;
 

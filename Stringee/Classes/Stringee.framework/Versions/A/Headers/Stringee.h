@@ -15,3 +15,15 @@
 #import "StringeeRoom.h"
 #import "StringeeRoomStream.h"
 #import "StringeeRoomStreamConfig.h"
+
+#import "StringeeVideo.h"
+#import "StringeeVideoRoom.h"
+#import "StringeeVideoTrack.h"
+#import "StringeeVideoTrackOption.h"
+#import "StringeeVideoTrackInfo.h"
+#import "StringeeRoomUserInfo.h"
+#import "StringeeVideoView.h"
+
+#import "StringeeCall2.h"
+
+

@@ -12,6 +12,7 @@
 @class StringeeClient;
 @class StringeeCall;
 @class StringeeRoom;
+@class StringeeCall2;
 
 @protocol StringeeConnectionDelegate <NSObject>
 
@@ -39,6 +40,9 @@
 @required
 
 -(void) incomingCallWithStringeeClient:(StringeeClient *)stringeeClient stringeeCall:(StringeeCall *)stringeeCall;
+
+@optional
+- (void)incomingCallWithStringeeClient:(StringeeClient *)stringeeClient stringeeCall2:(StringeeCall2 *)stringeeCall2;
 
 @end
 

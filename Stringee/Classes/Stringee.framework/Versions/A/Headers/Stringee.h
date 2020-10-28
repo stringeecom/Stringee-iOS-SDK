@@ -16,6 +16,24 @@
 #import "StringeeRoomStream.h"
 #import "StringeeRoomStreamConfig.h"
 
+#import "StringeeConversation.h"
+#import "StringeeMessage.h"
+#import "StringeeTextMessage.h"
+#import "StringeeLocationMessage.h"
+#import "StringeePhotoMessage.h"
+#import "StringeeVideoMessage.h"
+#import "StringeeContactMessage.h"
+#import "StringeeAudioMessage.h"
+#import "StringeeFileMessage.h"
+#import "StringeeStickerMessage.h"
+#import "StringeeProgress.h"
+#import "StringeeObjectChange.h"
+#import "StringeeChatRequest.h"
+
+#import "SXQueue.h"
+#import "SXCustomerInfo.h"
+#import "SXChatProfile.h"
+
 #import "StringeeVideo.h"
 #import "StringeeVideoRoom.h"
 #import "StringeeVideoTrack.h"
@@ -25,5 +43,3 @@
 #import "StringeeVideoView.h"
 
 #import "StringeeCall2.h"
-
-

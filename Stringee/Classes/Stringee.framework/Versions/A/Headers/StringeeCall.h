@@ -79,13 +79,13 @@ typedef NS_ENUM(NSInteger, CallDTMF) {
 
 @property (strong, nonatomic, readonly) NSString *callId;
 @property (assign, nonatomic, readonly) int serial;
+@property (assign, nonatomic, readonly) SignalingState signalingState;
 @property (strong, nonatomic, readonly) NSString *from;
 @property (strong, nonatomic, readonly) NSString *to;
 @property (strong, nonatomic, readonly) NSString *fromAlias;
 @property (strong, nonatomic, readonly) NSString *toAlias;
 @property (weak, nonatomic) id<StringeeCallDelegate> delegate;
 @property (assign, nonatomic, readonly) BOOL isIncomingCall;
-@property (assign, nonatomic, readonly) SignalingState signalingState;
 @property (assign, nonatomic, readonly) BOOL answeredOnAnotherDevice;
 @property (assign, nonatomic, readonly) CallType callType;
 @property (strong, nonatomic) NSString *customData;
@@ -125,8 +125,6 @@ typedef NS_ENUM(NSInteger, CallDTMF) {
 - (void)mute:(BOOL)isMute;
 
 - (void)transferToUserId:(NSString *)userId completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
-
-- (void)externalTransfer:(NSString *)from to:(NSString *)to completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
 
 - (void)hold:(BOOL)isHold completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
 

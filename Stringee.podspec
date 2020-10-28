@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Stringee'
-  s.version          = '1.5.4'
+  s.version          = '1.5.5'
   s.summary          = 'Developed by Stringee'
 
   s.description      = <<-DESC
@@ -26,5 +26,12 @@ The Stringee platform, developed by Stringee, makes it easy to embed high-qualit
 
   s.vendored_frameworks = 'Stringee/Classes/**/Stringee.framework'
   s.dependency "GoogleWebRTC", '1.1.27828'
+
+  s.pod_target_xcconfig = {
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+  }
+  s.user_target_xcconfig = {
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+  }
 
 end

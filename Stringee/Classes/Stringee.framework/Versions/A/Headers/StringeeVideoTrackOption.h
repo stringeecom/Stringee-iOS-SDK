@@ -11,10 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, StringeeVideoDimension) {
+    StringeeVideoDimension1080p,
     StringeeVideoDimension720p,
     StringeeVideoDimension480p,
-    StringeeVideoDimension360p,
-    StringeeVideoDimension240p
+    StringeeVideoDimension288p
 };
 
 @interface StringeeVideoTrackOption : NSObject

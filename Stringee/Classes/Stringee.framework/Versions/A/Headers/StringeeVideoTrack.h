@@ -40,6 +40,8 @@
 
 - (StringeeVideoView *)attach;
 
+- (StringeeVideoView *)attachWithVideoContentMode:(StringeeVideoContentMode)contentMode;
+
 - (NSArray<StringeeVideoView *> *)detach;
 
 - (void)detachAndRemove;

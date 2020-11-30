@@ -47,6 +47,7 @@
 @property (strong, nonatomic, readonly) NSString *customDataFromYourServer;
 @property (assign, nonatomic) BOOL isVideoCall;
 @property (assign, nonatomic) VideoResolution videoResolution;
+@property (assign, nonatomic) StringeeVideoContentMode videoContentMode;
 @property (strong, nonatomic, readonly) StringeeLocalVideoView *localVideoView;
 @property (strong, nonatomic, readonly) StringeeRemoteVideoView *remoteVideoView;
 

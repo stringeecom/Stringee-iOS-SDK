@@ -19,5 +19,7 @@ typedef NS_ENUM(NSInteger, StringeeVideoContentMode) {
 
 @property (nonatomic) AVCaptureSession *captureSession;
 
+@property (nonatomic, assign) StringeeVideoContentMode contentMode;
+
 @end
 

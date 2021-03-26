@@ -193,6 +193,8 @@
 
 - (void)getMessageWithId:(NSString *)msgId completion:(void(^)(BOOL status, int code, NSString *message, StringeeMessage *msg))completion;
 
+- (void)getMessageWithIds:(NSArray *)msgIds completion:(void(^)(BOOL status, int code, NSString *message, NSArray<StringeeMessage *> *msgs))completion;
+
 - (void)pinMessage:(StringeeMessage *)msg isPin:(BOOL)isPin completion:(void(^)(BOOL status, int code, NSString *message))completion;
 
 - (void)editMessage:(StringeeMessage *)msg newContent:(NSString *)newContent completion:(void(^)(BOOL status, int code, NSString *message))completion;

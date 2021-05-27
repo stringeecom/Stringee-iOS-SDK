@@ -28,6 +28,8 @@
 
 - (void)didHandleOnAnotherDevice2:(StringeeCall2 *)stringeeCall2 signalingState:(SignalingState)signalingState reason:(NSString *)reason sipCode:(int)sipCode sipReason:(NSString *)sipReason;
 
+- (void)didReceiveCallInfo2:(StringeeCall2 *)stringeeCall2 info:(NSDictionary *)info;
+
 @end
 
 @interface StringeeCall2 : NSObject
@@ -68,6 +70,8 @@
 - (BOOL)enableLocalVideo:(BOOL)isEnable;
 
 - (void)mute:(BOOL)isMute;
+
+- (void)sendCallInfo:(NSDictionary *)info completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
 
 @end
 

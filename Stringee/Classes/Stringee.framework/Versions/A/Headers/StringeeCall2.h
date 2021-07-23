@@ -73,5 +73,7 @@
 
 - (void)sendCallInfo:(NSDictionary *)info completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
 
+- (void)stats:(BOOL)useVideoTrack completionHandler:(void (^)( NSDictionary<NSString *, NSString *> *values))completionHandler;
+
 @end
 

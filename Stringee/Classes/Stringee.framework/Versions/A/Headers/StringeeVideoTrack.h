@@ -54,5 +54,7 @@
 
 - (BOOL)enableLocalVideo:(BOOL)enable;
 
+- (void)stats:(BOOL)useVideoTrack completionHandler:(void (^)( NSDictionary<NSString *, NSString *> *values))completionHandler;
+
 @end
 

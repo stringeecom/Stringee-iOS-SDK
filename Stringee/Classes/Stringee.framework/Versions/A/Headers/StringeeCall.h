@@ -94,6 +94,7 @@ typedef NS_ENUM(NSInteger, CallDTMF) {
 @property (assign, nonatomic) VideoResolution videoResolution;
 @property (strong, nonatomic, readonly) StringeeLocalVideoView *localVideoView;
 @property (strong, nonatomic, readonly) StringeeRemoteVideoView *remoteVideoView;
+@property (assign, nonatomic, readonly) BOOL peerToPeerCall;
 
 
 // MARK: - Init

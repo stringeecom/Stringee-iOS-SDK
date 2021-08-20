@@ -12,8 +12,6 @@
 #import "StringeeAudioManager.h"
 #import "StringeeLocalVideoView.h"
 #import "StringeeRemoteVideoView.h"
-#import "StringeeRoom.h"
-#import "StringeeRoomStream.h"
 #import "StringeeRoomStreamConfig.h"
 
 #import "StringeeConversation.h"

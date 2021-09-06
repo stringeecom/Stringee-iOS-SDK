@@ -28,9 +28,8 @@
 #import "StringeeObjectChange.h"
 #import "StringeeChatRequest.h"
 
-#import "SXQueue.h"
-#import "SXCustomerInfo.h"
-#import "SXChatProfile.h"
+#import "StringeeQueue.h"
+#import "StringeeChatProfile.h"
 
 #import "StringeeVideo.h"
 #import "StringeeVideoRoom.h"

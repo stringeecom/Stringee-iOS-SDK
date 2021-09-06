@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "StringeeConversation.h"
-#import "SXChatProfile.h"
-#import "SXCustomerInfo.h"
+#import "StringeeChatProfile.h"
 #import "StringeeChatRequest.h"
 #import "StringeeServerAddress.h"
 
@@ -55,6 +54,8 @@ extern NSString * const StringeeClientNewMessageContentKey;
 extern NSString * const StringeeClientNewMessageTypeKey;
 extern NSString * const StringeeClientNewMessageSeqKey;
 
+extern NSString * const StringeeChatUserTypingNotification;
+
 @protocol StringeeConnectionDelegate <NSObject>
 
 @required
@@ -71,13 +72,17 @@ extern NSString * const StringeeClientNewMessageSeqKey;
 
 - (void)didReceiveCustomMessage:(StringeeClient *)stringeeClient message:(NSDictionary *)message fromUserId:(NSString *)userId;
 
+- (void)didReceiveMessageFromTopic:(StringeeClient *)stringeeClient message:(NSDictionary *)message fromUserId:(NSString *)userId;
+
 - (void)didReceiveChatRequest:(StringeeClient *)stringeeClient request:(StringeeChatRequest *)request;
 
-- (void)didEndChatRequest:(StringeeClient *)stringeeClient request:(StringeeChatRequest *)request;
+- (void)didReceiveTransferChatRequest:(StringeeClient *)stringeeClient request:(StringeeChatRequest *)request;
 
-- (void)didEndChatSupport:(StringeeClient *)stringeeClient infos:(NSDictionary *)infos;
+- (void)timeoutAnswerChat:(StringeeClient *)stringeeClient request:(StringeeChatRequest *)request;
 
-- (void)didReceiveMessageFromTopic:(StringeeClient *)stringeeClient message:(NSDictionary *)message fromUserId:(NSString *)userId;
+- (void)timeoutInQueue:(StringeeClient *)stringeeClient info:(NSDictionary *)info;
+
+- (void)conversationEnded:(StringeeClient *)stringeeClient info:(NSDictionary *)info;
 
 @end
 
@@ -191,20 +196,20 @@ extern NSString * const StringeeClientNewMessageSeqKey;
 
 - (void)disconnect;
 
-- (void)getChatProfileWithKey:(NSString *)key completion:(void(^)(BOOL status, int code, NSString *message, SXChatProfile *chatProfile))completion;
+- (void)getChatProfileWithKey:(NSString *)key completion:(void(^)(BOOL status, int code, NSString *message, StringeeChatProfile *chatProfile))completion;
 
 - (void)generateTokenForCustomerWithKey:(NSString *)key username:(NSString *)username email:(NSString *)email completion:(void(^)(BOOL status, int code, NSString *message, NSString *token))completion;
 
 - (void)createLiveChatConversationWithQueueId:(NSString *)queueId completion:(void(^)(BOOL status, int code, NSString *message, StringeeConversation *conversation))completion;
 
-- (void)createTicketForMissChatWithKey:(NSString *)key userId:(NSString *)userId username:(NSString *)username email:(NSString *)email note:(NSString *)note completion:(void(^)(BOOL status, int code, NSString *message))completion;
+- (void)createTicketForMissChatWithKey:(NSString *)key username:(NSString *)username email:(NSString *)email note:(NSString *)note completion:(void(^)(BOOL status, int code, NSString *message))completion;
 
-- (void)getCustomerInfo:(void(^)(BOOL status, int code, NSString *message, SXCustomerInfo *customerInfo))completion;
-
-- (void)updateUserInfo:(SXCustomerInfo *)customerInfo username:(NSString *)username email:(NSString *)email avatar:(NSString *)avatar completion:(void(^)(BOOL status, int code, NSString *message))completion;
+- (void)updateUserInfoWithUsername:(NSString *)username email:(NSString *)email avatar:(NSString *)avatar completion:(void(^)(BOOL status, int code, NSString *message))completion;
 
 - (void)sendChatTranscriptTo:(NSString *)email convId:(NSString *)convId domain:(NSString *)domain completion:(void(^)(BOOL status, int code, NSString *message))completion;
 
 - (void)endChatSupportWithConvId:(NSString *)convId completion:(void(^)(BOOL status, int code, NSString *message))completion;
+
+- (StringeeChatRequest *)getChatRequestWithConvId:(NSString *)convId;
 
 @end

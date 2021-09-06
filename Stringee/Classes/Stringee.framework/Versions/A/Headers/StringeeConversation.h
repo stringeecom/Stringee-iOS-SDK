@@ -203,4 +203,8 @@
 
 - (void)setRole:(StringeeRole)role forPart:(StringeeIdentity *)part completion:(void(^)(BOOL status, int code, NSString *message))completion;
 
+- (void)beginTypingWithCompletion:(void(^)(BOOL status, int code, NSString *message))completion;
+
+- (void)endTypingWithCompletion:(void(^)(BOOL status, int code, NSString *message))completion;
+
 @end

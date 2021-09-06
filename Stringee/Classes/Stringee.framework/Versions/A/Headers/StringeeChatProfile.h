@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SXQueue.h"
+#import "StringeeQueue.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SXChatProfile : NSObject
+@interface StringeeChatProfile : NSObject
 
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, assign, readonly) BOOL auto_create_ticket;
@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSString *portal;
 @property (nonatomic, assign, readonly) int project_id;
 @property (nonatomic, assign, readonly) BOOL zalo_as_livechat;
-@property (nonatomic, strong, readonly) NSArray<SXQueue *> *queues;
+@property (nonatomic, strong, readonly) NSArray<StringeeQueue *> *queues;
 
 - (instancetype)initWithData:(NSDictionary *)data;
 

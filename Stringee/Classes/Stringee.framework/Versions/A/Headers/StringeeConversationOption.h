@@ -26,4 +26,8 @@
  */
 @property (assign, nonatomic) BOOL isGroup;
 
+@property (nonatomic) NSString *oaId;
+
+@property (nonatomic) NSString *customData;
+
 @end

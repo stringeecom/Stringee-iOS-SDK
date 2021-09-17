@@ -98,7 +98,11 @@
  */
 @property (assign, nonatomic, readonly) long long created;
 
-@property (assign, nonatomic) StringeeChannel channelType;
+@property (assign, nonatomic, readonly) StringeeChannel channelType;
+
+@property (nonatomic, readonly) NSString *oaId;
+
+@property (nonatomic, readonly) NSString *customData;
 
 /**
  Gửi tin nhắn

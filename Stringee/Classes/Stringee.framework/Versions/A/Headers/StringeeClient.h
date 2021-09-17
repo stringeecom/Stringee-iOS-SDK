@@ -149,6 +149,9 @@ extern NSString * const StringeeChatUserTypingNotification;
  */
 - (void)getLocalConversationsWithCount:(NSUInteger)count userId:(NSString *)userId completionHandler:(void(^)(BOOL status, int code, NSString *message, NSArray<StringeeConversation *> *conversations))completionHandler;
 
+- (void)getLocalConversationsWithCount:(NSUInteger)count userId:(NSString *)userId oaId:(NSString *)oaId completionHandler:(void(^)(BOOL status, int code, NSString *message, NSArray<StringeeConversation *> *conversations))completionHandler;
+
+
 /**
  Lấy thông tin các conversation mà được update mới nhất trên server(Ex: có tin nhắn đến, thêm thành viên...). Trong đó:
  @param count số lượng conversation muốn lấy.
@@ -158,6 +161,10 @@ extern NSString * const StringeeChatUserTypingNotification;
 
 - (void)getLastConversationsWithCount:(NSUInteger)count loadAllConversations:(BOOL)loadAllConversations completionHandler:(void(^)(BOOL status, int code, NSString *message, NSArray<StringeeConversation *> *conversations))completionHandler;
 
+- (void)getLastConversationsWithCount:(NSUInteger)count oaId:(NSString *)oaId completionHandler:(void(^)(BOOL status, int code, NSString *message, NSArray<StringeeConversation *> *conversations))completionHandler;
+
+- (void)getLastConversationsWithCount:(NSUInteger)count loadAllConversations:(BOOL)loadAllConversations oaId:(NSString *)oaId completionHandler:(void(^)(BOOL status, int code, NSString *message,
+                                                                                                                                   NSArray<StringeeConversation *> *conversations))completionHandler;
 /**
  Lấy thông tin các conversation mà được update sau một mốc thời gian, dùng để lấy về các conversation mới được update.
  @param datetime mốc thời gian, sử dụng trường lastUpdate của Conversation.
@@ -167,6 +174,10 @@ extern NSString * const StringeeChatUserTypingNotification;
 - (void)getConversationsAfter:(long long)datetime withCount:(NSUInteger)count completionHandler:(void(^)(BOOL status, int code, NSString *message, NSArray<StringeeConversation *> *conversations))completionHandler;
 
 - (void)getConversationsAfter:(long long)datetime withCount:(NSUInteger)count loadAllConversations:(BOOL)loadAllConversations completionHandler:(void(^)(BOOL status, int code, NSString *message, NSArray<StringeeConversation *> *conversations))completionHandler;
+
+- (void)getConversationsAfter:(long long)datetime withCount:(NSUInteger)count oaId:(NSString *)oaId completionHandler:(void(^)(BOOL status, int code, NSString *message, NSArray<StringeeConversation *> *conversations))completionHandler;
+
+- (void)getConversationsAfter:(long long)datetime withCount:(NSUInteger)count loadAllConversations:(BOOL)loadAllConversations oaId:(NSString *)oaId completionHandler:(void(^)(BOOL status, int code, NSString *message, NSArray<StringeeConversation *> *conversations))completionHandler;
 
 /**
  Lấy thông tin các conversation mà được update trước một mốc thời gian. Ex: lấy về các conversation khi người dùng loadmore.
@@ -178,6 +189,10 @@ extern NSString * const StringeeChatUserTypingNotification;
 
 - (void)getConversationsBefore:(long long)datetime withCount:(NSUInteger)count loadAllConversations:(BOOL)loadAllConversations completionHandler:(void(^)(BOOL status, int code, NSString *message, NSArray<StringeeConversation *> *conversations))completionHandler;
 
+- (void)getConversationsBefore:(long long)datetime withCount:(NSUInteger)count oaId:(NSString *)oaId completionHandler:(void(^)(BOOL status, int code, NSString *message, NSArray<StringeeConversation *> *conversations))completionHandler;
+
+- (void)getConversationsBefore:(long long)datetime withCount:(NSUInteger)count loadAllConversations:(BOOL)loadAllConversations oaId:(NSString *)oaId completionHandler:(void(^)(BOOL status, int code, NSString *message, NSArray<StringeeConversation *> *conversations))completionHandler;
+
 
 - (void)getConversationForUsers:(NSSet<StringeeIdentity *> *)users completionHandler:(void(^)(BOOL status, int code, NSString *message, NSArray<StringeeConversation *> *conversations))completionHandler;
 
@@ -188,6 +203,8 @@ extern NSString * const StringeeChatUserTypingNotification;
 - (void)getUnreadConversationsAfter:(long long)datetime withCount:(NSUInteger)count completion:(void(^)(BOOL status, int code, NSString *message, NSArray<StringeeConversation *> *conversations))completion;
 
 - (void)getUnreadConversationsBefore:(long long)datetime withCount:(NSUInteger)count completion:(void(^)(BOOL status, int code, NSString *message, NSArray<StringeeConversation *> *conversations))completion;
+
+- (void)joinOAConversationWithConvId:(NSString *)convId completion:(void(^)(BOOL status, int code, NSString *message))completion;
 
 /**
  Xoá dữ liệu chat của user ở local. Cần thực hiện trước khi connect tới stringee server với user mới.

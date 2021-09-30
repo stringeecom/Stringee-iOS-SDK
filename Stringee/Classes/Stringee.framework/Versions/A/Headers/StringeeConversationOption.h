@@ -30,4 +30,6 @@
 
 @property (nonatomic) NSString *customData;
 
+@property (nonatomic) NSString *creatorId;
+
 @end

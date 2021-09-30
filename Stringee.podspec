@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Stringee'
-  s.version          = '1.7.2'
+  s.version          = '1.7.3'
   s.summary          = 'Developed by Stringee'
 
   s.description      = <<-DESC

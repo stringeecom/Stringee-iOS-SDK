@@ -16,8 +16,12 @@ pod 'Stringee'
 
 ## Author
 
-duochv@stringee.com
+info@stringee.com
 
 ## License
 
 Stringee is available under the MIT license. See the LICENSE file for more info.
+
+## Release Notes
+### Version 1.7.4
+- Allow to update customer phone number when update customer info

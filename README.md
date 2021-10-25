@@ -23,5 +23,11 @@ info@stringee.com
 Stringee is available under the MIT license. See the LICENSE file for more info.
 
 ## Release Notes
-### Version 1.7.4
+#### Version 1.7.5
+Bug fixes:
+- Video call ends before being successfully initiated
+- Disable ipv6
+
+#### Version 1.7.4
 - Allow to update customer phone number when update customer info
+

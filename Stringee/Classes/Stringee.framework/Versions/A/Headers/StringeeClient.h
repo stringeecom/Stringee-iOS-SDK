@@ -125,6 +125,8 @@ extern NSString * const StringeeChatUserTypingNotification;
 
 - (void)setRestBaseUrl:(NSString *)baseUrl completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
 
+- (void)setStringeeXBaseUrl:(NSString *)baseUrl completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
+
 /**
  Tạo một conversation.
  @param name tên conversation.

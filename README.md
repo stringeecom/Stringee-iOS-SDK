@@ -23,11 +23,19 @@ info@stringee.com
 Stringee is available under the MIT license. See the LICENSE file for more info.
 
 ## Release Notes
+
+#### Version 1.7.6
+Bug fixes:
+- No remote video when queues have call waiting video or audio
+
+New features:
+- Allow to change base url for StringeeX API
+
 #### Version 1.7.5
 Bug fixes:
 - Video call ends before being successfully initiated
 - Disable ipv6
 
 #### Version 1.7.4
-- Allow to update customer phone number when update customer info
+- Allow to update customer phone number when updating customer information
 

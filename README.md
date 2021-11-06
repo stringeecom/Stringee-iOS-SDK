@@ -24,6 +24,10 @@ Stringee is available under the MIT license. See the LICENSE file for more info.
 
 ## Release Notes
 
+#### Version 1.7.8
+Bug fixes:
+- No callback for markMessageAsSeen api
+
 #### Version 1.7.7
 New features:
 - Allow to change base url for StringeeX API

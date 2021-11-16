@@ -24,6 +24,10 @@ Stringee is available under the MIT license. See the LICENSE file for more info.
 
 ## Release Notes
 
+#### Version 1.7.10
+New features:
+- Add dtmf function for StringeeCall2
+
 #### Version 1.7.9
 Bug fixes:
 - No callback for hangup and reject functions

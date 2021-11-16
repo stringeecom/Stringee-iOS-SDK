@@ -77,5 +77,7 @@
 
 - (void)stats:(BOOL)useVideoTrack completionHandler:(void (^)( NSDictionary<NSString *, NSString *> *values))completionHandler;
 
+- (void)sendDTMF:(CallDTMF)callDTMF completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
+
 @end
 

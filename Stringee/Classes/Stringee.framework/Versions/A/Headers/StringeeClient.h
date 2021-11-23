@@ -223,6 +223,8 @@ extern NSString * const StringeeChatUserTypingNotification;
 
 - (void)createTicketForMissChatWithKey:(NSString *)key username:(NSString *)username email:(NSString *)email note:(NSString *)note completion:(void(^)(BOOL status, int code, NSString *message))completion;
 
+- (void)createTicketForMissChatWithKey:(NSString *)key username:(NSString *)username email:(NSString *)email phone:(NSString *)phone note:(NSString *)note completion:(void(^)(BOOL status, int code, NSString *message))completion;
+
 - (void)updateUserInfoWithUsername:(NSString *)username email:(NSString *)email avatar:(NSString *)avatar completion:(void(^)(BOOL status, int code, NSString *message))completion;
 
 - (void)updateUserInfoWithUsername:(NSString *)username email:(NSString *)email avatar:(NSString *)avatar phone:(NSString *)phone completion:(void(^)(BOOL status, int code, NSString *message))completion;

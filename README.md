@@ -24,6 +24,10 @@ Stringee is available under the MIT license. See the LICENSE file for more info.
 
 ## Release Notes
 
+#### Version 1.7.11
+New features:
+- Identify live-chat user by email or phone number.
+
 #### Version 1.7.10
 New features:
 - Add dtmf function for StringeeCall2

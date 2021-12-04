@@ -24,6 +24,10 @@ Stringee is available under the MIT license. See the LICENSE file for more info.
 
 ## Release Notes
 
+#### Version 1.7.13
+Bug fixes:
+- Can not render video in background for react-native
+
 #### Version 1.7.12
 Bug fixes:
 - No callback for deleteConversation and removeParticipant functions

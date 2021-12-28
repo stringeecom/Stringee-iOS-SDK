@@ -24,6 +24,10 @@ Stringee is available under the MIT license. See the LICENSE file for more info.
 
 ## Release Notes
 
+#### Version 1.7.15
+Bug fixes:
+- Add events for conversation when receiving a new message
+
 #### Version 1.7.14
 Bug fixes:
 - No chat event in remove participant case

@@ -24,6 +24,10 @@ Stringee is available under the MIT license. See the LICENSE file for more info.
 
 ## Release Notes
 
+#### Version 1.7.16
+New features:
+- Allow to registerPush with option to delete all other tokens
+
 #### Version 1.7.15
 Bug fixes:
 - Add events for conversation when receiving a new message

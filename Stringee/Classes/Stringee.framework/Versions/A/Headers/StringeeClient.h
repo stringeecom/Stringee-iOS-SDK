@@ -119,6 +119,8 @@ extern NSString * const StringeeChatUserTypingNotification;
 
 - (void)registerPushForDeviceToken:(NSString *)deviceToken isProduction:(BOOL)isProduction isVoip:(BOOL)isVoip completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
 
+- (void)registerPushForDeviceToken:(NSString *)deviceToken isProduction:(BOOL)isProduction isVoip:(BOOL)isVoip deleteOthers:(BOOL)deleteOthers completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
+
 - (void)unregisterPushForDeviceToken:(NSString *)deviceToken completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
 
 - (void)sendCustomMessage:(NSDictionary *)message toUserId:(NSString *)userId completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;

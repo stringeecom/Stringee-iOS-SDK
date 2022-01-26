@@ -10,6 +10,7 @@
 #import "StringeeClient.h"
 #import "StringeeVideoTrackOption.h"
 #import "StringeeVideoView.h"
+#import "StringeeRoomUserInfo.h"
 
 @class StringeeVideoTrack;
 @class StringeeVideoRoom;
@@ -31,6 +32,7 @@
 @property (nonatomic) NSString *localId; // local track id, server se ghi nhan la peerConnectionID, moi track se co 1 peer
 @property (nonatomic) NSString *serverId;
 @property (nonatomic) NSString *serverPcId;
+@property (nonatomic) StringeeRoomUserInfo *publisher;
 
 @property (weak, nonatomic) id<StringeeVideoTrackDelegate> delegate;
 @property (nonatomic) AVCaptureSession *captureSession; // video cua local

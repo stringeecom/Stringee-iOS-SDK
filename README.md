@@ -24,6 +24,11 @@ Stringee is available under the MIT license. See the LICENSE file for more info.
 
 ## Release Notes
 
+#### Version 1.7.17
+New features:
+- Allow to registerPush with option to delete all other tokens by package name
+- Check current incoming call by callId
+
 #### Version 1.7.16
 New features:
 - Allow to registerPush with option to delete all other tokens

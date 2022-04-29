@@ -24,6 +24,10 @@ Stringee is available under the MIT license. See the LICENSE file for more info.
 
 ## Release Notes
 
+#### Version 1.7.18
+New features:
+- Send media state to server.
+
 #### Version 1.7.17
 New features:
 - Allow to registerPush with option to delete all other tokens by package name

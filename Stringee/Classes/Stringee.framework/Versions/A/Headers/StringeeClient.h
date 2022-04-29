@@ -115,6 +115,8 @@ extern NSString * const StringeeChatUserTypingNotification;
 
 - (instancetype)initWithServerAddress:(NSArray<StringeeServerAddress *> *)serverAddresses;
 
+- (void)setServerAddress:(NSArray<StringeeServerAddress *> *)serverAddresses;
+
 - (void)connectWithAccessToken:(NSString *)accessToken;
 
 - (void)registerPushForDeviceToken:(NSString *)deviceToken isProduction:(BOOL)isProduction isVoip:(BOOL)isVoip completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;

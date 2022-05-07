@@ -32,6 +32,8 @@
 
 - (void)didReceiveCallInfo2:(StringeeCall2 *)stringeeCall2 info:(NSDictionary *)info;
 
+- (void)trackMediaStateChange:(StringeeCall2 *)stringeeCall2 mediaType:(StringeeTrackMediaType)mediaType enable:(BOOL)enable from:(NSString *)from;
+
 @end
 
 @interface StringeeCall2 : NSObject
@@ -54,6 +56,7 @@
 @property (assign, nonatomic) StringeeVideoContentMode videoContentMode;
 @property (strong, nonatomic, readonly) StringeeLocalVideoView *localVideoView;
 @property (strong, nonatomic, readonly) StringeeRemoteVideoView *remoteVideoView;
+@property (assign, nonatomic) BOOL autoSendTrackMediaState;
 
 - (instancetype)initWithStringeeClient:(StringeeClient *)stringeeClient from:(NSString *)from to:(NSString *)to;
 

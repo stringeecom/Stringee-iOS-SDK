@@ -15,6 +15,11 @@
 @class StringeeVideoTrack;
 @class StringeeVideoRoom;
 
+typedef NS_ENUM(NSInteger, StringeeTrackMediaType) {
+    StringeeTrackMediaTypeAudio = 1,
+    StringeeTrackMediaTypeVideo = 2
+};
+
 @protocol StringeeVideoTrackDelegate <NSObject>
 
 @required
@@ -37,6 +42,7 @@
 @property (weak, nonatomic) id<StringeeVideoTrackDelegate> delegate;
 @property (nonatomic) AVCaptureSession *captureSession; // video cua local
 @property (weak, nonatomic) StringeeVideoRoom *room;
+@property (assign, nonatomic) BOOL autoSendTrackMediaState;
 
 - (instancetype)initWithClient:(StringeeClient *)client options:(StringeeVideoTrackOption *)options isLocal:(BOOL)isLocal delegate:(id<StringeeVideoTrackDelegate>)delegate;
 

@@ -24,6 +24,10 @@ Stringee is available under the MIT license. See the LICENSE file for more info.
 
 ## Release Notes
 
+#### Version 1.7.19
+New features:
+- Allow to send media state change event.
+
 #### Version 1.7.18
 New features:
 - Send media state to server.

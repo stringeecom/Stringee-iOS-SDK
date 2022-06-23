@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Stringee'
-  s.version          = '1.7.19'
+  s.version          = '1.8.0'
   s.summary          = 'Developed by Stringee'
 
   s.description      = <<-DESC
@@ -18,8 +18,8 @@ The Stringee platform, developed by Stringee, makes it easy to embed high-qualit
   s.ios.deployment_target = '10.0'
   s.pod_target_xcconfig = {'OTHER_LDFLAGS' => '-ObjC'}
 
-  s.source_files = 'Stringee/Classes/**/Stringee.framework/Versions/A/Headers/*.h'
-  s.public_header_files = 'Stringee/Classes/**/Stringee.framework/Versions/A/Headers/*.h'
+  s.source_files = 'Stringee/Classes/**/Stringee.framework/Headers/*.h'
+  s.public_header_files = 'Stringee/Classes/**/Stringee.framework/Headers/*.h'
 
   s.frameworks = 'CoreFoundation', 'VideoToolbox', 'AudioToolbox', 'AVFoundation', 'GLKit'
   s.libraries = 'icucore', 'stdc++'

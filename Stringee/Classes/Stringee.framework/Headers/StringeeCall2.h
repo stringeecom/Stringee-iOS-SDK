@@ -54,8 +54,8 @@
 @property (assign, nonatomic) BOOL isVideoCall;
 @property (assign, nonatomic) VideoResolution videoResolution;
 @property (assign, nonatomic) StringeeVideoContentMode videoContentMode;
-@property (strong, nonatomic, readonly) StringeeLocalVideoView *localVideoView;
-@property (strong, nonatomic, readonly) StringeeRemoteVideoView *remoteVideoView;
+@property (strong, nonatomic, readonly) StringeeVideoView *localVideoView;
+@property (strong, nonatomic, readonly) StringeeVideoView *remoteVideoView;
 @property (assign, nonatomic) BOOL autoSendTrackMediaState;
 
 - (instancetype)initWithStringeeClient:(StringeeClient *)stringeeClient from:(NSString *)from to:(NSString *)to;

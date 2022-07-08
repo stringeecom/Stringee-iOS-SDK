@@ -21,5 +21,9 @@ typedef NS_ENUM(NSInteger, StringeeVideoContentMode) {
 
 @property (nonatomic, assign) StringeeVideoContentMode contentMode;
 
+- (void)addScanLayer;
+
+- (void)removeScanLayer;
+
 @end
 

@@ -25,5 +25,7 @@ typedef NS_ENUM(NSInteger, StringeeVideoContentMode) {
 
 - (void)removeScanLayer;
 
+- (void)snapshotWithCompletion:(void(^)(UIImage *snapshot))completion;
+
 @end
 

@@ -235,6 +235,10 @@ extern NSString * const StringeeChatUserTypingNotification;
 
 - (void)updateUserInfoWithUsername:(NSString *)username email:(NSString *)email avatar:(NSString *)avatar phone:(NSString *)phone completion:(void(^)(BOOL status, int code, NSString *message))completion;
 
+- (void)updateUserInfo:(StringeeIdentity *)userInfo completion:(void(^)(BOOL status, int code, NSString *message))completion;
+
+- (void)getUserInfosByUserIds:(NSArray<NSString *> *)userIds completion:(void(^)(BOOL status, int code, NSString *message, NSArray<StringeeIdentity *> *users))completion;
+
 - (void)sendChatTranscriptTo:(NSString *)email convId:(NSString *)convId domain:(NSString *)domain completion:(void(^)(BOOL status, int code, NSString *message))completion;
 
 - (void)endChatSupportWithConvId:(NSString *)convId completion:(void(^)(BOOL status, int code, NSString *message))completion;

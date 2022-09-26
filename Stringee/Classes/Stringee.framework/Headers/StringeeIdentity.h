@@ -45,5 +45,22 @@ typedef NS_ENUM(NSUInteger, StringeeRole) {
 
 @property (assign, nonatomic, readonly) StringeeRole role;
 
+@property (nonatomic) NSString *browser;
+
+@property (nonatomic) NSString *device;
+
+@property (nonatomic) NSString *email;
+
+@property (nonatomic) NSString *phone;
+
+@property (nonatomic) NSString *hostname;
+
+@property (nonatomic) NSString *ipaddress;
+
+@property (nonatomic) NSString *location;
+
+@property (nonatomic) NSString *platform;
+
+@property (nonatomic) NSString *useragent;
 
 @end

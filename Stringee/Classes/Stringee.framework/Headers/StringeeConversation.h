@@ -118,6 +118,8 @@
  */
 - (void)sendMessageWithoutPretreatment:(StringeeMessage *)message error:(NSError **)error;
 
+- (void)sendMessageWithoutPretreatment2:(StringeeMessage *)message withCompletionHandler:(void(^)(BOOL status, int code, NSString * message))completionHandler;
+
 /**
  Xoá conversation này.
  CompletionHandler trả về kết quả.

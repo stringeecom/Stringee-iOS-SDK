@@ -15,7 +15,7 @@ The Stringee platform, developed by Stringee, makes it easy to embed high-qualit
   s.source           = { :git => 'https://github.com/stringeecom/Stringee-iOS-SDK.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
   s.pod_target_xcconfig = {'OTHER_LDFLAGS' => '-ObjC'}
 
   s.source_files = 'Stringee/Classes/**/Stringee.framework/Headers/*.h'

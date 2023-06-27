@@ -13,7 +13,6 @@
 #import "StringeeLocalVideoView.h"
 #import "StringeeRemoteVideoView.h"
 #import "StringeeRoomStreamConfig.h"
-#import "StringeeVideoView.h"
 
 @class StringeeCall;
 
@@ -93,8 +92,8 @@ typedef NS_ENUM(NSInteger, CallDTMF) {
 @property (strong, nonatomic, readonly) NSString *customDataFromYourServer;
 @property (assign, nonatomic) BOOL isVideoCall;
 @property (assign, nonatomic) VideoResolution videoResolution;
-@property (strong, nonatomic, readonly) StringeeVideoView *localVideoView;
-@property (strong, nonatomic, readonly) StringeeVideoView *remoteVideoView;
+@property (strong, nonatomic, readonly) StringeeLocalVideoView *localVideoView;
+@property (strong, nonatomic, readonly) StringeeRemoteVideoView *remoteVideoView;
 @property (assign, nonatomic, readonly) BOOL peerToPeerCall;
 
 

@@ -117,7 +117,7 @@ extern NSString * const StringeeChatUserTypingNotification;
 
 - (void)setServerAddress:(NSArray<StringeeServerAddress *> *)serverAddresses;
 
-- (void)enableSSLPinningWithCertName:(NSString *)name;
+- (void)enableSSLPinningWithCerts:(NSArray<NSString *> *)certs;
 
 - (void)connectWithAccessToken:(NSString *)accessToken;
 

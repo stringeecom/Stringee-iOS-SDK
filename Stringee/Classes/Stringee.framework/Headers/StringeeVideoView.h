@@ -15,6 +15,11 @@ typedef NS_ENUM(NSInteger, StringeeVideoContentMode) {
     StringeeVideoContentModeScaleAspectFit
 };
 
+typedef NS_ENUM(NSInteger, StringeeScannerType) {
+    StringeeScannerTypeRectangle,
+    StringeeScannerTypeOval
+};
+
 @interface StringeeVideoView : UIView
 
 @property (nonatomic) AVCaptureSession *captureSession;
@@ -27,5 +32,6 @@ typedef NS_ENUM(NSInteger, StringeeVideoContentMode) {
 
 - (void)snapshotWithCompletion:(void(^)(UIImage *snapshot))completion;
 
+- (void)setupScanView:(CGFloat)boderRadius maskWidth:(CGFloat)maskWidth ratio:(CGFloat)ratio color:(UIColor*)color cornerColor:(UIColor *)cornerColor type:(StringeeScannerType)type;
 @end
 

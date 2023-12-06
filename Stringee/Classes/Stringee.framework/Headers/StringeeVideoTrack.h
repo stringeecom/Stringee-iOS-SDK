@@ -20,6 +20,13 @@ typedef NS_ENUM(NSInteger, StringeeTrackMediaType) {
     StringeeTrackMediaTypeVideo = 2
 };
 
+typedef NS_ENUM(NSInteger, StringeeTrackType) {
+    StringeeTrackTypeCamera,
+    StringeeTrackTypeScreen,
+    StringeeTrackTypePlayer
+};
+
+
 @protocol StringeeVideoTrackDelegate <NSObject>
 
 @required
@@ -33,6 +40,9 @@ typedef NS_ENUM(NSInteger, StringeeTrackMediaType) {
 @property (assign, nonatomic) BOOL audio;
 @property (assign, nonatomic) BOOL video;
 @property (assign, nonatomic) BOOL screen;
+@property (assign, nonatomic) BOOL player;
+
+@property (assign, nonatomic) StringeeTrackType trackType;
 
 @property (nonatomic) NSString *localId; // local track id, server se ghi nhan la peerConnectionID, moi track se co 1 peer
 @property (nonatomic) NSString *serverId;

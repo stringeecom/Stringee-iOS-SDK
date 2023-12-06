@@ -28,6 +28,10 @@
 
 - (void)didAddTrack2:(StringeeCall2 *)stringeeCall2 track:(StringeeVideoTrack *)track;
 
+- (void)didAddLocalTrack2:(StringeeCall2 *)stringeeCall2 track:(StringeeVideoTrack *)track;
+
+- (void)didAddRemoteTrack2:(StringeeCall2 *)stringeeCall2 track:(StringeeVideoTrack *)track;
+
 - (void)didHandleOnAnotherDevice2:(StringeeCall2 *)stringeeCall2 signalingState:(SignalingState)signalingState reason:(NSString *)reason sipCode:(int)sipCode sipReason:(NSString *)sipReason;
 
 - (void)didReceiveCallInfo2:(StringeeCall2 *)stringeeCall2 info:(NSDictionary *)info;
@@ -57,6 +61,8 @@
 @property (strong, nonatomic, readonly) StringeeVideoView *localVideoView;
 @property (strong, nonatomic, readonly) StringeeVideoView *remoteVideoView;
 @property (assign, nonatomic) BOOL autoSendTrackMediaState;
+@property(strong, nonatomic) NSString * encryptPhone;
+
 
 - (instancetype)initWithStringeeClient:(StringeeClient *)stringeeClient from:(NSString *)from to:(NSString *)to;
 

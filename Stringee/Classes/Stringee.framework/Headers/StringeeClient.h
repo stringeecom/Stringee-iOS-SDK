@@ -131,6 +131,8 @@ extern NSString * const StringeeChatUserTypingNotification;
 
 - (void)existIncomingCallWithCallId:(NSString *)callId completion:(void(^)(BOOL status, int code, NSString *message, BOOL exist))completion;
 
+- (void)existCall:(NSString *)callId completion:(void(^)(BOOL status, int code, NSString *message, BOOL exist))completion;
+
 - (void)sendCustomMessage:(NSDictionary *)message toUserId:(NSString *)userId completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
 
 - (void)setRestBaseUrl:(NSString *)baseUrl completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;

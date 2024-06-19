@@ -4,7 +4,7 @@
 //
 //  Created by HoangDuoc on 8/29/20.
 //  Copyright © 2020 Hoang Duoc. All rights reserved.
-//
+//  Updated 19/06/2024
 
 #import <Foundation/Foundation.h>
 #import "StringeeCall.h"

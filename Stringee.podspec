@@ -25,7 +25,9 @@ The Stringee platform, developed by Stringee, makes it easy to embed high-qualit
   s.libraries = 'icucore', 'stdc++'
 
   s.vendored_frameworks = 'Stringee/Classes/**/Stringee.framework'
-  s.dependency "GoogleWebRTC", '1.1.31999'
+  # s.dependency "GoogleWebRTC", '1.1.31999'
+  # change WebRTC to WebRTC-SDK https://github.com/webrtc-sdk
+  s.dependency 'WebRTC-SDK', '125.6422.04'
 
   s.pod_target_xcconfig = {
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'

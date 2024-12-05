@@ -41,4 +41,4 @@
 
 #import "StringeeCall2.h"
 
-// test add log for bug on react native
+// 2 test add log for bug on react native

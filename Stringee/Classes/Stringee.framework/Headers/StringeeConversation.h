@@ -105,6 +105,11 @@
 @property (nonatomic, readonly) NSString *customData;
 
 /**
+ Trạng thái của conversation.
+ */
+@property (assign, nonatomic, readonly) StringeeChatStatus chatStatus;
+
+/**
  Gửi tin nhắn
  @param message một thể hiện của StringeeMessage(StringeeTextMessage, StringeeLocationMessage, StringeeContactMessage...).
  @param error lỗi trả về nếu gửi thất bại.

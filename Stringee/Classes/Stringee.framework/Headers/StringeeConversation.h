@@ -13,6 +13,14 @@
 
 @class StringeeClient;
 
+typedef NS_ENUM(NSInteger, StringeeChatStatus) {
+    StringeeChatStatusRinging = 0,
+    StringeeChatStatusAnswering = 1,
+    StringeeChatStatusEnded = 2,
+    StringeeChatStatusMissed = 3,
+    StringeeChatStatusInactive = 4
+};
+
 /**
  Lớp đại diện một group chat(đơn hoặc nhóm).
  */

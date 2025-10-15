@@ -113,7 +113,11 @@ typedef NS_ENUM(NSInteger, CallDTMF) {
 
 - (void)hangupWithCompletionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
 
+- (void)hangupWithReason:(NSString *)reason completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
+
 - (void)rejectWithCompletionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
+
+- (void)rejectWithReason:(NSString *)reason completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
 
 - (void)sendDTMF:(CallDTMF)callDTMF completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
 

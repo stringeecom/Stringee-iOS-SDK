@@ -74,7 +74,11 @@
 
 - (void)hangupWithCompletionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
 
+- (void)hangupWithReason:(NSString *)reason completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
+
 - (void)rejectWithCompletionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
+
+- (void)rejectWithReason:(NSString *)reason completionHandler:(void(^)(BOOL status, int code, NSString *message))completionHandler;
 
 - (void)switchCamera;
 

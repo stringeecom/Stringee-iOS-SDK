@@ -11,7 +11,8 @@
 
 typedef enum {
     VideoResolution_Normal      = 0, // 480 x 640
-    VideoResolution_HD          = 1  // 720 x 1280
+    VideoResolution_HD          = 1,  // 720 x 1280
+    VideoResolution_FullHD      = 2  // 1080 x 1920
 } VideoResolution;
 
 

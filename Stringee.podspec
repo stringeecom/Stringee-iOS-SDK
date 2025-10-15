@@ -19,13 +19,13 @@ The Stringee platform, developed by Stringee, makes it easy to embed high-qualit
   s.ios.deployment_target = '13.0'
   s.pod_target_xcconfig = {'OTHER_LDFLAGS' => '-ObjC'}
 
-  s.source_files = 'Stringee/Classes/**/Stringee.framework/Headers/*.h'
-  s.public_header_files = 'Stringee/Classes/**/Stringee.framework/Headers/*.h'
+  s.source_files = 'Stringee/Classes/**/Stringee.xcframework/**/Stringee.framework/Headers/*.h'
+  s.public_header_files = 'Stringee/Classes/**/Stringee.xcframework/**/Stringee.framework/Headers/*.h'
 
   s.frameworks = 'CoreFoundation', 'VideoToolbox', 'AudioToolbox', 'AVFoundation', 'GLKit'
   s.libraries = 'icucore', 'stdc++'
 
-  s.vendored_frameworks = 'Stringee/Classes/**/Stringee.framework'
+  s.vendored_frameworks = 'Stringee/Classes/**/Stringee.xcframework'
   s.dependency "WebRTC-SDK", '137.7151.09'
 
 end

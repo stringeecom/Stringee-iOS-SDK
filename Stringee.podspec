@@ -1,7 +1,6 @@
-
 Pod::Spec.new do |s|
   s.name             = 'Stringee'
-  s.version          = '2.0.2'
+  s.version          = '2.2.0'
   s.summary          = 'Developed by Stringee'
 
   s.description      = <<-DESC
@@ -9,23 +8,39 @@ The Stringee platform, developed by Stringee, makes it easy to embed high-qualit
                        DESC
 
   s.homepage         = 'https://github.com/stringeecom/Stringee-iOS-SDK'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { :type => 'MIT', :text => <<-LICENSE
+Copyright (c) 2017 duochv@stringee.com <hoangduoc20121540@gmail.com>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+    LICENSE
+  }
   s.author           = { 'HoangDuoc' => 'duochv@stringee.com' }
-  s.source           = { :git => 'https://github.com/stringeecom/Stringee-iOS-SDK.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-  
 
-  s.ios.deployment_target = '13.0'
-  s.pod_target_xcconfig = {'OTHER_LDFLAGS' => '-ObjC'}
+  # Same zip as the Swift Package release, so SPM and CocoaPods ship one binary per version.
+  s.source           = {
+    :http => "https://github.com/stringeecom/Stringee-iOS-SDK-SPM/releases/download/#{s.version}/Stringee.xcframework.zip",
+    :sha256 => 'cb5cde217632cd2653e610399520f15835fd1be41afe754e89d6bed752c8fcfa'
+  }
 
-  s.source_files = 'Stringee/Classes/**/Stringee.xcframework/**/Stringee.framework/Headers/*.h'
-  s.public_header_files = 'Stringee/Classes/**/Stringee.xcframework/**/Stringee.framework/Headers/*.h'
+  s.ios.deployment_target = '15.0'
+  s.vendored_frameworks = 'Stringee.xcframework'
 
-  s.frameworks = 'CoreFoundation', 'VideoToolbox', 'AudioToolbox', 'AVFoundation', 'GLKit'
-  s.libraries = 'icucore', 'stdc++'
-
-  s.vendored_frameworks = 'Stringee/Classes/**/Stringee.xcframework'
-  s.dependency "WebRTC-SDK", '137.7151.09'
-
+  # Same WebRTC build as the Swift Package: stasel/WebRTC 137.0.0.
+  s.dependency 'WebRTC-lib', '137.0.0'
 end
